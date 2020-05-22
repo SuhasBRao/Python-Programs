@@ -1,2 +1,3 @@
 # Python-Programs
-This repo contains solution for some common Python chellenges 
+This repo contains solutions for some common Python chellenges.
+Python challenges can be found here
