@@ -1,5 +1,5 @@
 # Python-Programs
-This repo contains solutions for some common Python chellenges.
+This repo contains solutions for some common Python challenges.
 Python challenges can be found here
 
 Python Challenges - https://pythonprinciples.com/challenges/.
