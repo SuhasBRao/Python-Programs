@@ -21,5 +21,3 @@ for i in range(len(arr) - 1):
 
 print('--------------------------')
 print('Sorted array : {}'.format(arr))
-
-        
