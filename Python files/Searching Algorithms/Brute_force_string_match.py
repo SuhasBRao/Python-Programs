@@ -15,8 +15,7 @@ def find_Pattern(text,pattern):
 
     for i in range(n - m + 1):
         j = 0
-        while j < m and pattern[j] == text[i + j]:
-            
+        while j < m and pattern[j] == text[i + j]: # the loop checks for the patterns
             #print(pattern[j],text[i+j])
             j = j + 1
         
@@ -24,7 +23,7 @@ def find_Pattern(text,pattern):
             #print('y')
             return i
             
-    return -1
+    return -1       # return -1 if the pattern is not found
 
 text = getInts()
 pattern = getInts()
