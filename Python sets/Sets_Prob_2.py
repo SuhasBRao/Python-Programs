@@ -12,7 +12,7 @@ n,m = getInputs()
 arr = getInputs()
 set_A = set(getInputs())
 set_B = set(getInputs())
-setc = set()
+
 happiness = 0
 for item in arr:
     if item in set_A:
