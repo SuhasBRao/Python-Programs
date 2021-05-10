@@ -8,7 +8,7 @@ class Node:
         self.next = next
 
 class linkedList:
-    # This class creates a singly linked list with certain methods
+    'This class creates a singly linked list with certain methods'
     def __init__(self):
         self.head = None
     
@@ -78,6 +78,37 @@ class linkedList:
             if pos == index - 1:
                 ptr.next = ptr.next.next
                 break
+    
+    def is_present(self, val):
+        # method to check whether element is present in ll
+        ptr = self.head
+        count = 0
+        while ptr != None:
+            if ptr.data == val:
+                count += 1
+                break
+            ptr = ptr.next
+        return True if count==1 else False
+
+    def insert_after_value(self,data,val):
+        temp = Node(val)
+        ptr = self.head
+        if self.is_present(data):
+            print('present')
+            while ptr != None:
+                if ptr.data == data:
+                    break
+                ptr = ptr.next
+
+            temp.next = ptr.next
+            ptr.next = temp
+        else:
+            while ptr.next != None:
+                ptr = ptr.next
+
+            temp.next = ptr.next
+            ptr.next = temp
+            
         
     def display_list(self):
         # Funtion is used to display the singly linked list created
@@ -95,14 +126,15 @@ class linkedList:
 # Alter the below segments to create a linked list with required data field
 if __name__ == '__main__':
     mylist = linkedList()   # create an instance of the class
-    
-    mylist.insert_at_end(11)
-    mylist.insert_at_beg(5) # insert 5 at beginning
-    mylist.insert_at_beg(89)  # insert 89 at beginning
+    print(mylist.__doc__)
 
-    mylist.insert_at_pos(99, 0)
-    mylist.insert_values(['I','am','sUHAS','B','Rao'])
+    mylist.insert_at_end(5)
+    mylist.insert_at_beg(8)
+    mylist.insert_at_beg(10)
+
+    print(mylist.is_present(12))
+
     mylist.display_list()
-    mylist.remove_at(3)
+
+    mylist.insert_after_value(5, 0)
     mylist.display_list()
-    mylist.get_len()
