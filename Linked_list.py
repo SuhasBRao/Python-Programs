@@ -29,7 +29,7 @@ class linkedList:
                 ptr = ptr.next
             ptr.next = temp_node
 
-    def insert_values(self, values : [list]):
+    def insert_values(self, values : list):
         # inserts multiple values at the same time
         for item in values:
             self.insert_at_end(item)
