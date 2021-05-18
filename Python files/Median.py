@@ -4,7 +4,7 @@ problem -> https://py.checkio.org/en/mission/median/
 '''
 from typing import List
 
-def checkio(data: List[int]) -> [int, float]:
+def checkio(data: List[int]):
     
     #replace this for solution
     data.sort()
