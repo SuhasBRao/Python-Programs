@@ -1,5 +1,5 @@
 '''
-Problem-statement -->
+Problem-statement --> https://www.hackerrank.com/challenges/find-the-merge-point-of-two-joined-linked-lists/problem
 '''
 
 import math
@@ -53,18 +53,19 @@ def print_singly_linked_list(node):
 def findMergeNode(head1, head2):
     ptr1 = head1
     ptr2 = head2
-    inc = 0
-    while ptr2 == ptr1:
-        if ptr1.next == None:
-            ptr1 = ptr2
-        else:
-            ptr1 = ptr1.next
+    old_ptr2 = ptr2
+    while ptr1 != None:
+        ptr2 = old_ptr2
         
-        if ptr2.next == None:
-            ptr2 = ptr1
-        else:
+        while ptr2 != None:
+            
+            if ptr1 == ptr2:
+                return ptr2.data
+      
             ptr2 = ptr2.next
-    return ptr2.next
+        
+        ptr1 = ptr1.next
+    
     
     
 if __name__ == '__main__':
@@ -106,7 +107,7 @@ if __name__ == '__main__':
         print('############')
         #print_singly_linked_list(llist1.head)
         #result = findMergeNode(llist1.head, llist2.head)
-        findMergeNode(llist1.head, llist2.head)
+        print(findMergeNode(llist1.head, llist2.head))
         #fptr.write(str(result) + '\n')
 
     #fptr.close()
