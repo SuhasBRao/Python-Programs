@@ -27,7 +27,7 @@ def insertionSort(arr):
         if key < arr[i -1]:
             arr = checkFurther(i-1,key,arr)
             
-    
+    print(arr)
 
 #arr = [4,3,2,10,12,1,5,6]
 #arr = [7, 1, 3, 2, 4, 5, 6]
