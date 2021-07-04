@@ -6,8 +6,8 @@ class treeNode:
 
     def __init__(self, data):
         self.data = data 
-        self.left = []
-        self.right =[]
+        self.left = None
+        self.right = None
         self.parent= None
 
     def addChild(self,node):
@@ -31,8 +31,20 @@ class treeNode:
                 self.right = node
                 node.parent = self
             
-            
-      
+    def find_min(self):
+        
+        if self.left is None:
+            return self.data
+        
+        return self.left.find_min()
+
+    def find_max(self):
+        if self.right is None:
+            return self.data
+        
+        return self.right.find_max()
+
+        
     def getlevel(self):
         # this function gets the level of a node in a tree
         level = 0
@@ -46,7 +58,7 @@ class treeNode:
     
     # We will implement in-order traversal
     def inOrderTraverse(self):
-        idnt =  '' if not self.parent else  '  '*self.getlevel() + '|-->'
+        idnt =  '' if not self.parent else  '   '*self.getlevel() + '|---->'
         
         if self.left:
             #print(self.left)
@@ -76,18 +88,19 @@ if __name__ == '__main__':
 
     root.addChild(child1)
     root.addChild(child2)
+    
 
     root.addChild(treeNode(-4))
     root.addChild(treeNode(3))
-    
-    
-    
+  
     root.addChild(treeNode(9))
     root.addChild(treeNode(21))
-    root.addChild(treeNode(8))
+    root.addChild(treeNode(18))
     root.addChild(treeNode(10))
     
-    root.addChild(treeNode(24))
+    root.addChild(treeNode(25))
+    
     
     root.inOrderTraverse()
+    print(child2.left.find_min())
    
