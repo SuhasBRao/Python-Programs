@@ -17,7 +17,15 @@ import sys
 #
 
 def countApplesAndOranges(s, t, a, b, apples, oranges):
-    pass
+
+    apl_loc = len([a+x for x in apples if a+x in range(s,t+1)])
+    orng_loc = len([b+x for x in oranges if b+x in range(s, t+1)])
+    
+    #aple_valid = len([x for x in apl_loc if x in range(s, t+1)])
+    #orng_valid = len([x for x in orng_loc if x in range(s, t+1)])
+    
+    print(apl_loc, orng_loc, sep='\n')
+    
     # Write your code here
 
 if __name__ == '__main__':
