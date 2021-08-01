@@ -1,12 +1,12 @@
 '''
 This program implements merge sort algorithm (recursive)
 '''
-def mergeSort(arr):
+def merge_Sort(arr):
     if len(arr) == 1:
         return arr
     mid = len(arr)//2
-    left_sub_array = mergeSort(arr[:mid])
-    right_sub_array = mergeSort(arr[mid:])
+    left_sub_array = merge_Sort(arr[:mid])
+    right_sub_array = merge_Sort(arr[mid:])
     
     i,j,k = [0]*3
     arr= []
@@ -30,4 +30,4 @@ def mergeSort(arr):
 if __name__ == "__main__":
     
     arr = list(map(int,input().split()))
-    print(mergeSort(arr))
+    print(merge_Sort(arr))
