@@ -13,6 +13,7 @@
 		        self.data = data
 		        self.next = None
 	}
+    
 '''
 #Function to find the data of nth node from the end of a linked list
 def getNthFromLast(head,n):
