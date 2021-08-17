@@ -1,16 +1,26 @@
 def transitionPoint(arr, n):
     #Code here
-    i = 0
-    pnt = -1
-    st = set(arr)
-    if len(st) ==1 and list(st)[0] == 1: 
+    l = 0 
+    r = n-1
+    #print(bS(arr,l,r))
+    st = list(set(arr))
+    if st[0] == 1:
         return 0
-    while i<n:
-        if arr[i] == 1:
-            pnt = i
-            break
-        i+= 1
-    return pnt
+    else:
+        return bS(arr,l,r)
+    pass
+   
+    
+def bS(arr,l,r):
+    
+    while l<=r:
+        mid = int((l+r)//2)
+        if arr[mid] == 0:
+            l = mid -1
+        elif (mid == 0 or (mid > 0 and arr[mid - 1] == 0)):
+            return mid
+        r = mid -1
+    return -1 
 
 #{ 
 #  Driver Code Starts
