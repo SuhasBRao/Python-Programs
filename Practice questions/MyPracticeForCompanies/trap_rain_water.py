@@ -1,4 +1,3 @@
-import sys
 
 class Solution:
     def trappingWater(self, arr,n):
