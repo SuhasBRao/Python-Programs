@@ -18,11 +18,8 @@ import sys
 
 def saveThePrisoner(n, m, s):
     # Write your code here
-    diff = m%n
-    #print(diff)
-    s += diff -1
-    return s%n
-
+    return ((s - 1 + m - 1) % n) + 1
+    
 if __name__ == '__main__':
     
     t = int(input().strip())
