@@ -26,7 +26,7 @@ def viralAdvertising(n):
         shared_to = no_likes_current_day * 3
     
     return cumulative_likes
-    pass
+    # pass
 
 if __name__ == '__main__':
     n = int(input().strip())
