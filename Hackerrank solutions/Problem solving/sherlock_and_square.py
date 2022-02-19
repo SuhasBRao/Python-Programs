@@ -1,5 +1,6 @@
 #!/bin/python3
 
+from itertools import count
 import math
 import os
 import random
@@ -15,23 +16,19 @@ import sys
 #  2. INTEGER b
 #
 
-def is_Square(n):
-    if (math.ceil(math.sqrt(n)) ==
-       math.floor(math.sqrt(n))):
-        return n
-    
-
 def squares(a, b):
     # Write your code
-    x = a
-    while not is_Square(x):
-        x += 1
-    root = math.sqrt(x)
-    cnt = 1
-    while root**2 < b:
-        cnt += 1
-        root += 1
-    return cnt
+    count = 0
+    a,b = [int(j) for j in input().strip().split()]
+    square1 = a ** (.5)
+    if (square1 != int(square1)):
+        a1 = int(square1) + 1
+    else:
+        a1 = int(square1)
+    square2 = b ** (.5)
+    b1 = int(square2)
+    count = b1 - a1 +1
+    return count
 
 if __name__ == '__main__':
     
