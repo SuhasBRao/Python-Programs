@@ -1,8 +1,15 @@
 # The program Implements insertion sort algorithm in python.
 
 # Check out Insertion sort Description here -> (https://www.geeksforgeeks.org/insertion-sort/)
+
+from sys import stdin
+
+def getInputs():
+    return list(map(int, stdin.readline().split()))
+
 def checkFurther(i,key,arr):
-    # recusrsive function that checks for smaller elements
+    # This checks if the key is smaller than the elements in sorted part of 
+    # the list
     if i >= 0:
         if key < arr[i-1]:
             return checkFurther(i-1,key,arr)
@@ -20,16 +27,18 @@ def checkFurther(i,key,arr):
 def insertionSort(arr):
     
     for i in range(1,len(arr)):
-        print()
-        print('#####')
         
         key = arr[i]
         if key < arr[i -1]:
             arr = checkFurther(i-1,key,arr)
             
-    print(arr)
+    return arr
 
-#arr = [4,3,2,10,12,1,5,6]
-#arr = [7, 1, 3, 2, 4, 5, 6]
-arr = [2,3,4,1,5]
-insertionSort(arr)
+# {
+# Driver Code starts
+if __name__ == "__main__":
+    # write your code here
+    unsorted_list = getInputs()
+    sorted_list = insertionSort(unsorted_list)
+    print('Sorted array : {0}'.format(sorted_list))
+# } Driver Code ends
