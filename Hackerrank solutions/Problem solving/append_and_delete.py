@@ -17,23 +17,24 @@ import sys
 
 def appendAndDelete(s, t, k):
     # Write your code here
-    n = len(s)
-    m = len(t)
-    i = 0
+    c = 0
+    l = len(s)
+    while s[:l]!=t[:l]:
+        l-=1
+        c+=1
+        
+    o = ((len(t)-l)+c)
     
-    while i < n -1:
-        if i >= m-1:
-            break
-        if s[i] != t[i]:
-            break
-        i += 1
-    diff_str = s[i:]
-    print(diff_str)
-    diff_len = len(diff_str)
-    if diff_len >= k:
-        return 'No'
+    if k<o:
+        print("No")
+    elif (len(s)+len(t))<=k:
+        print("Yes")
+    elif 2*len(t)<k:
+        print("Yes")
+    elif k%2 == o%2:
+        print("Yes")
     else:
-        return 'Yes'
+        print("No")
         
     
 
