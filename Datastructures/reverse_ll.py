@@ -1,26 +1,40 @@
 '''
 This program reverses a given singly linked list using python.
 '''
-import Linked_list                      # make sure you have Linked_list.py in same directory
-singly_ll = Linked_list.linkedList()
-singly_ll.insert_at_end(5)
-singly_ll.insert_at_end(8)
-singly_ll.insert_at_end(3)
-singly_ll.insert_at_end(99)
-print('Before reversing : ',end = '') 
-singly_ll.display_list()
 
+def reverseLinkedList(alinkedlist):
+    previousNode = None
+    nextNode = None
+    currentNode = alinkedlist.headOfList
 
-prev = None
-next = None
-head = singly_ll.head
+    while currentNode != None:
+        nextNode = currentNode.nextElement
+        currentNode.nextElement = previousNode
+        previousNode = currentNode
+        currentNode = nextNode
+        
+    alinkedlist.headOfList = previousNode
 
-while head != None:
-    next = head.next
-    head.next = prev
-    prev = head
-    head = next
+# {
+# Driver Code starts
+if __name__ == "__main__":
+    # write your code here
+    import SinglyLinkedList                     # make sure you have SinglyLinkedList.py in same directory
+    from sys import stdin
+    
+    alinkedlist = SinglyLinkedList.linkedList()
+    print("Enter elements of linked list : ")
+    
+    elementsOfLinkedList = list(map(int, stdin.readline().strip().split()))
+    
+    alinkedlist.insertMutipleElementsAtEnd(elementsOfLinkedList)
+    print('Before reversing : ',end = '') 
+    alinkedlist.showLinkedList()
+    
+    reverseLinkedList(alinkedlist)
+    
+    
+    print('After reversing : ',end = '')
+    alinkedlist.showLinkedList()
 
-singly_ll.head = prev
-print('After reversing : ',end = '')
-singly_ll.display_list()
+# } Driver Code ends
