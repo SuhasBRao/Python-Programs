@@ -6,8 +6,8 @@ class treeNode:
 
     def __init__(self, data):
         self.data = data 
-        self.left = None
-        self.right = None
+        self.leftChild = None
+        self.rightChild = None
         self.parent= None
 
     def addChild(self,node):
@@ -16,36 +16,36 @@ class treeNode:
         
         if node.data < self.data:
         
-            if self.left:
-                self.left.addChild(node)
+            if self.leftChild:
+                self.leftChild.addChild(node)
             else:
-                self.left = node
+                self.leftChild = node
                 node.parent = self
    
         if node.data > self.data:
             
-            if self.right:
+            if self.rightChild:
                 
-                self.right.addChild(node)
+                self.rightChild.addChild(node)
             else:
-                self.right = node
+                self.rightChild = node
                 node.parent = self
             
-    def find_min(self):
+    def findMin(self):
         
-        if self.left is None:
+        if self.leftChild is None:
             return self.data
         
-        return self.left.find_min()
+        return self.leftChild.find_min()
 
-    def find_max(self):
-        if self.right is None:
+    def findMax(self):
+        if self.rightChild is None:
             return self.data
         
-        return self.right.find_max()
+        return self.rightChild.find_max()
 
         
-    def getlevel(self):
+    def getLevel(self):
         # this function gets the level of a node in a tree
         level = 0
         if self.parent:
@@ -60,7 +60,7 @@ class treeNode:
     def inOrderTraverse(self):
         idnt =  '' if not self.parent else  '   '*self.getlevel() + '|---->'
         
-        if self.left:
+        if self.leftChild:
             #print(self.left)
             
                 #print(child.data)
@@ -74,10 +74,10 @@ class treeNode:
         
         print(idnt + str(self.data))
         
-        if self.right:
+        if self.rightChild:
             #print(self.right)
             
-            self.right.inOrderTraverse()
+            self.rightChild.inOrderTraverse()
        
 
 if __name__ == '__main__':
