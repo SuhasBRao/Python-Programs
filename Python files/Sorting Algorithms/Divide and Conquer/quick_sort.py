@@ -3,9 +3,7 @@ This program implements a quick sort(recursive).
 '''
 
 def quick_Sort(arr):
-    if arr == []:
-        return arr
-    if len(arr) == 1:
+    if len(arr) < 2:
         return arr
     pivot = arr[0]
     left_sub_array = [] # will hold elements less than pivot
